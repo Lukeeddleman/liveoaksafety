@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Oak Safety — Information Sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @page { size: letter portrait; margin: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      width: 8.5in;
+      height: 11in;
+      overflow: hidden;
+      background: #fff;
+      color: #1A1A1A;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: #1E3A2F;
+      padding: 0.19in 0.38in;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-brand { display: flex; align-items: center; gap: 11px; }
+    .header-shield svg {
+      width: 30px; height: 30px;
+      fill: #7AB08A;
+    }
+    .header-name {
+      color: #fff;
+      font-size: 21pt;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .header-sub {
+      color: rgba(255,255,255,0.5);
+      font-size: 7pt;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .header-contact { text-align: right; }
+    .header-contact p { color: rgba(255,255,255,0.6); font-size: 9pt; line-height: 1.75; }
+    .header-contact .bold { color: rgba(255,255,255,0.92); font-weight: 700; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      height: 1.95in;
+      overflow: hidden;
+      background: #2D5A3D;
+    }
+    .hero img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(100deg, rgba(18,38,28,0.92) 38%, rgba(18,38,28,0.45) 75%, rgba(18,38,28,0.15) 100%);
+    }
+    .hero-text {
+      position: absolute;
+      left: 0.38in; top: 50%;
+      transform: translateY(-50%);
+      max-width: 4.4in;
+    }
+    .hero-eyebrow {
+      color: #CEEADA;
+      font-size: 7pt; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+    .hero-headline {
+      color: #fff;
+      font-size: 22pt; font-weight: 900;
+      letter-spacing: -0.035em; line-height: 1.1;
+      margin-bottom: 11px;
+    }
+    .hero-headline em { color: #7AB08A; font-style: normal; }
+    .hero-desc {
+      color: rgba(255,255,255,0.74);
+      font-size: 9pt; line-height: 1.65;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: #F7F4EF;
+      border-top: 3px solid #CEEADA;
+    }
+    .service {
+      padding: 0.2in 0.26in;
+      border-right: 1px solid #E0DCD5;
+    }
+    .service:last-child { border-right: none; }
+    .service-icon {
+      width: 32px; height: 32px;
+      background: #CEEADA;
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 9px;
+    }
+    .service-icon svg {
+      width: 17px; height: 17px;
+      stroke: #2D5A3D; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .service-title {
+      font-size: 10pt; font-weight: 800;
+      color: #1E3A2F; margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .service-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .service-list li {
+      font-size: 8pt; color: #3D3D3D; line-height: 1.5;
+      display: flex; align-items: flex-start; gap: 7px;
+    }
+    .service-list li::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: #4A7C59; border-radius: 50%;
+      flex-shrink: 0; margin-top: 4px;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how {
+      background: #fff;
+      padding: 0.18in 0.38in 0.19in;
+      border-top: 1px solid #E0DCD5;
+      border-bottom: 1px solid #E0DCD5;
+    }
+    .how-label {
+      font-size: 7pt; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: #4A7C59; margin-bottom: 13px;
+    }
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+    }
+    .how-steps::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: calc(12.5% + 6px);
+      right: calc(12.5% + 6px);
+      height: 1px;
+      background: #CEEADA;
+    }
+    .how-step { text-align: center; padding: 0 10px; position: relative; }
+    .how-num {
+      width: 30px; height: 30px;
+      background: #1E3A2F; color: #fff;
+      border-radius: 50%;
+      font-size: 11pt; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 9px;
+      position: relative; z-index: 1;
+    }
+    .how-title { font-size: 8.5pt; font-weight: 700; color: #1E3A2F; margin-bottom: 5px; line-height: 1.3; }
+    .how-desc  { font-size: 7.5pt; color: #6B6B6B; line-height: 1.55; }
+
+    /* ===== WHY + CONTACT ===== */
+    .bottom { display: grid; grid-template-columns: 1fr 0.82fr; }
+
+    .why {
+      padding: 0.2in 0.26in 0.2in 0.38in;
+      background: #fff;
+      border-right: 1px solid #E0DCD5;
+    }
+    .why-label {
+      font-size: 7pt; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: #4A7C59; margin-bottom: 9px;
+    }
+    .why-title {
+      font-size: 15pt; font-weight: 900;
+      color: #1E3A2F; margin-bottom: 12px;
+      letter-spacing: -0.03em; line-height: 1.15;
+    }
+    .why-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 7px 18px; }
+    .why-list li {
+      font-size: 8pt; color: #3D3D3D; line-height: 1.5;
+      display: flex; align-items: flex-start; gap: 7px;
+    }
+    .why-list li::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: #4A7C59; border-radius: 50%;
+      flex-shrink: 0; margin-top: 4px;
+    }
+
+    .contact-block {
+      background: #1E3A2F;
+      padding: 0.2in 0.3in 0.2in 0.28in;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .contact-label {
+      font-size: 7pt; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: #7AB08A; margin-bottom: 14px;
+    }
+    .contact-line {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 10px;
+    }
+    .contact-ico {
+      width: 15px; height: 15px;
+      stroke: #CEEADA; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+    .contact-val { color: #fff; font-size: 11pt; font-weight: 700; }
+    .contact-val.lg { font-size: 14pt; font-weight: 900; }
+    .contact-url { color: #7AB08A; font-size: 9pt; font-weight: 600; }
+    .contact-cta {
+      margin-top: 14px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 6px;
+      padding: 10px 13px;
+    }
+    .contact-cta p {
+      color: rgba(255,255,255,0.72);
+      font-size: 8pt; line-height: 1.6;
+    }
+    .contact-cta strong { color: #fff; }
+
+    /* ===== DISCLAIMER ===== */
+    .disclaimer {
+      background: #182B22;
+      padding: 7px 0.38in;
+    }
+    .disclaimer p {
+      color: rgba(255,255,255,0.28);
+      font-size: 6pt; line-height: 1.65;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-brand">
+      <div class="header-shield">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <div class="header-name">Live Oak Safety</div>
+        <div class="header-sub">Workplace Training &amp; Certification Management</div>
+      </div>
+    </div>
+    <div class="header-contact">
+      <p class="bold">512-553-5798</p>
+      <p>luke@liveoaksafety.com</p>
+      <p>liveoaksafety.com</p>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img
+      src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=85&fit=crop&crop=center"
+      alt="Workplace safety training — construction workers in Central Texas"
+      loading="eager"
+    >
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <div class="hero-eyebrow">Serving Businesses Throughout Central Texas</div>
+      <h1 class="hero-headline">Keep your employees trained.<br><em>Keep your records current.</em></h1>
+      <p class="hero-desc">
+        Live Oak Safety helps Central Texas businesses coordinate workplace safety training and manage
+        employee certification records — so your team stays prepared without adding another administrative burden.
+      </p>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="services">
+    <div class="service">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <div class="service-title">Training Coordination</div>
+      <ul class="service-list">
+        <li>First Aid, CPR, and AED</li>
+        <li>Bleeding control &amp; emergency trauma response</li>
+        <li>Bloodborne pathogens</li>
+        <li>Workplace violence awareness</li>
+        <li>Conflict de-escalation</li>
+        <li>Additional programs based on your needs</li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+      </div>
+      <div class="service-title">Certification Management</div>
+      <ul class="service-list">
+        <li>Employee training records</li>
+        <li>Completion and expiration dates</li>
+        <li>Certificate and credential documents</li>
+        <li>Course rosters and attendance</li>
+        <li>Training history by employee or location</li>
+        <li>Upcoming renewal requirements</li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <div class="service-title">Expiration Alerts &amp; Renewals</div>
+      <ul class="service-list">
+        <li>Monitor all upcoming expiration dates</li>
+        <li>Identify employees due for renewal</li>
+        <li>Recommend the appropriate course</li>
+        <li>Coordinate a qualified instructor</li>
+        <li>Schedule the on-site session</li>
+        <li>Update records after completion</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how">
+    <div class="how-label">How It Works</div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-title">Tell us what your team needs</div>
+        <div class="how-desc">We review your workforce, locations, existing records, and training goals.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-title">We coordinate the training</div>
+        <div class="how-desc">Live Oak Safety locates a qualified provider and organizes scheduling and course details.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-title">Your employees complete the course</div>
+        <div class="how-desc">Training is delivered at your workplace by a qualified instructor.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <div class="how-title">We keep everything current</div>
+        <div class="how-desc">Records are organized and renewal reminders go out before the next deadline.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY + CONTACT -->
+  <div class="bottom">
+    <div class="why">
+      <div class="why-label">Why Live Oak Safety</div>
+      <div class="why-title">Less searching.<br>More doing.</div>
+      <ul class="why-list">
+        <li>One point of contact for training and renewals</li>
+        <li>Local coordination throughout Central Texas</li>
+        <li>Organized employee certification records</li>
+        <li>Proactive expiration reminders</li>
+        <li>Flexible support for small and growing businesses</li>
+        <li>No need to find a new instructor every cycle</li>
+      </ul>
+    </div>
+    <div class="contact-block">
+      <div class="contact-label">Schedule a Free Review</div>
+      <div class="contact-line">
+        <svg class="contact-ico" viewBox="0 0 24 24">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.08-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17v-.08z"/>
+        </svg>
+        <span class="contact-val lg">512-553-5798</span>
+      </div>
+      <div class="contact-line">
+        <svg class="contact-ico" viewBox="0 0 24 24">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span class="contact-val">luke@liveoaksafety.com</span>
+      </div>
+      <div class="contact-line">
+        <svg class="contact-ico" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span class="contact-url">liveoaksafety.com</span>
+      </div>
+      <div class="contact-cta">
+        <p><strong>No cost, no commitment.</strong> Just a brief conversation about your team's training needs and how we can help keep your records organized going forward.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <p>Training is delivered by independent providers holding qualifications appropriate to the selected course. Course availability, certification, pricing, and requirements may vary by program and provider. Live Oak Safety coordinates training and record-management services and does not represent a certifying organization unless expressly authorized. Serving businesses throughout Central Texas.</p>
+  </div>
+
+</body>
+</html>
