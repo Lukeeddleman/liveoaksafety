@@ -1,0 +1,5 @@
+node_modules/
+flyer/node_modules/
+flyer/package-lock.json
+flyer/package.json
+*.pdf
