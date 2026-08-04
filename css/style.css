@@ -84,7 +84,7 @@ a:hover { color: var(--oak-800); }
   height: 68px; display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; }
-.nav-logo img { height: 38px; width: auto; display: block; }
+.nav-logo img { height: 48px; width: auto; display: block; }
 .nav-logo-text { font-size: 1.15rem; font-weight: 800; color: var(--oak-800); letter-spacing: -.02em; }
 
 .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
@@ -358,7 +358,7 @@ select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns
   display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px;
   padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 32px;
 }
-.footer-brand-logo { height: 34px; width: auto; filter: brightness(0) invert(1); opacity: .8; margin-bottom: 14px; display: block; }
+.footer-brand-logo { display: none; }
 .footer-brand-name { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
 .footer-brand p { font-size: .875rem; line-height: 1.7; color: rgba(255,255,255,.5); }
 .footer-col h4 { color: #fff; font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; }
